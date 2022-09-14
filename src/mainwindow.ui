@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Почтовый клиент</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/icons/icons/appicon.png</normaloff>:/icons/icons/appicon.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QSplitter" name="vertical_splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QSplitter" name="horizontal_splitter">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QTreeWidget" name="folders_tree">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="expandsOnDoubleClick">
+         <bool>false</bool>
+        </property>
+        <attribute name="headerStretchLastSection">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Папка</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Число непрочитанных</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Общее число писем</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Исходное название папки</string>
+         </property>
+        </column>
+       </widget>
+       <widget class="QWidget" name="messages_widget">
+        <layout class="QVBoxLayout" name="vertical_layout_2">
+         <item>
+          <widget class="QTableWidget" name="messages_table">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="selectionBehavior">
+            <enum>QAbstractItemView::SelectRows</enum>
+           </property>
+           <attribute name="horizontalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>false</bool>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Тема</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Отправитель</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Дата</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Получатели</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Число вложений</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Размер сообщения с вложениями</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>UID</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Message ID</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="search_query">
+           <property name="placeholderText">
+            <string>Поиск сообщения</string>
+           </property>
+           <property name="clearButtonEnabled">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QTextEdit" name="current_message">
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="undoRedoEnabled">
+        <bool>false</bool>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="acceptRichText">
+        <bool>false</bool>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="logs_text_edit">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Главное</string>
+    </property>
+    <addaction name="update_folders_and_messages"/>
+    <addaction name="set_up_account"/>
+    <addaction name="separator"/>
+    <addaction name="exit_program"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Папки</string>
+    </property>
+    <addaction name="add_folder"/>
+    <addaction name="rename_folder"/>
+    <addaction name="delete_selected_folder"/>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>Сообщения</string>
+    </property>
+    <addaction name="send_message"/>
+    <addaction name="download_attachment"/>
+    <addaction name="separator"/>
+    <addaction name="copy_selected_message"/>
+    <addaction name="delete_selected_message"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>Дополнительно</string>
+    </property>
+    <addaction name="clear_all_and_disable_autoupdate"/>
+    <addaction name="show_message_statistics"/>
+    <addaction name="show_about_window"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+   <addaction name="menu_4"/>
+  </widget>
+  <widget class="QStatusBar" name="status_bar"/>
+  <action name="send_message">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/send_message.png</normaloff>:/icons/icons/send_message.png</iconset>
+   </property>
+   <property name="text">
+    <string>Отправить сообщение</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="update_folders_and_messages">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/refresh.png</normaloff>:/icons/icons/refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Обновить папки с сообщениями</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="show_message_statistics">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/statistics.png</normaloff>:/icons/icons/statistics.png</iconset>
+   </property>
+   <property name="text">
+    <string>Статистика</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="show_about_window">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/about.png</normaloff>:/icons/icons/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>О программе</string>
+   </property>
+  </action>
+  <action name="add_folder">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/add_folder.png</normaloff>:/icons/icons/add_folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Добавить папку</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="delete_selected_folder">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/delete_folder.png</normaloff>:/icons/icons/delete_folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить выбранную папку</string>
+   </property>
+  </action>
+  <action name="exit_program">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/exit.png</normaloff>:/icons/icons/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Выйти из программы</string>
+   </property>
+  </action>
+  <action name="set_up_account">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/settings.png</normaloff>:/icons/icons/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Настроить учетную запись</string>
+   </property>
+  </action>
+  <action name="delete_selected_message">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/delete_message.png</normaloff>:/icons/icons/delete_message.png</iconset>
+   </property>
+   <property name="text">
+    <string>Удалить выбранные сообщения безвозвратно</string>
+   </property>
+  </action>
+  <action name="rename_folder">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/rename_folder.png</normaloff>:/icons/icons/rename_folder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Переименовать выбранную папку</string>
+   </property>
+  </action>
+  <action name="clear_all_and_disable_autoupdate">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/delete_all.png</normaloff>:/icons/icons/delete_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>Очистить все и отключить автообновление</string>
+   </property>
+  </action>
+  <action name="download_attachment">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/get_attachment.png</normaloff>:/icons/icons/get_attachment.png</iconset>
+   </property>
+   <property name="text">
+    <string>Скачать вложение выбранного сообщения</string>
+   </property>
+  </action>
+  <action name="copy_selected_message">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icons/copy_message.png</normaloff>:/icons/icons/copy_message.png</iconset>
+   </property>
+   <property name="text">
+    <string>Скопировать выбранные сообщения в папку...</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>folders_tree</tabstop>
+  <tabstop>messages_table</tabstop>
+  <tabstop>current_message</tabstop>
+  <tabstop>logs_text_edit</tabstop>
+ </tabstops>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

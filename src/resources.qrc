@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>icons/about.png</file>
+        <file>icons/add_folder.png</file>
+        <file>icons/appicon.png</file>
+        <file>icons/copy_message.png</file>
+        <file>icons/delete_all.png</file>
+        <file>icons/delete_folder.png</file>
+        <file>icons/delete_message.png</file>
+        <file>icons/exit.png</file>
+        <file>icons/get_attachment.png</file>
+        <file>icons/refresh.png</file>
+        <file>icons/send_message.png</file>
+        <file>icons/settings.png</file>
+        <file>icons/statistics.png</file>
+        <file>icons/rename_folder.png</file>
+    </qresource>
+</RCC>
